@@ -1,4 +1,4 @@
 mobile-assign
 =============
 
-Mobile class assignments
+Assign 1 repo
