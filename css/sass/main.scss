@@ -1,0 +1,80 @@
+/*-->> GLOBAL <<--*/
+
+$legacy-support-for-ie5: false;
+$legacy-support-for-ie6: false;
+$experimental-support-for-pie: true;
+
+@import "compass";
+@import "compass/css3";
+@import "compass/css3/pie";
+@import "compass/utilities";
+
+@import "_colors";
+@import "_type";
+
+/*-->> CSS PIE <<--*/
+
+$pie-behavior: url("/content/css/PIE.htc");
+$pie-base-class: pie-element;
+
+/*-->> MAIN STYLING <<--*/
+
+div.ui-content h2 a.ui-link {
+  color: $red;
+  text-decoration: none;
+}
+
+.ui-grid-a > div {
+  padding: 20px;
+  @include box-sizing(border-box);
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+  h3 {
+    margin-top: -5px;
+  }
+  img {
+    @include border-radius(10px);
+  }
+}
+
+/*-->> Webkit browser fixes <<--*/
+
+@media all and (-webkit-min-device-pixel-ratio:0) {
+  
+}
+
+/*-->> Clear & float <<--*/
+
+.clearfix {
+    zoom: 1;
+    &:before{
+        content: ""; display: table;
+    };
+    &:after {
+        content: ""; display: table; clear: both;
+    }
+}
+
+.fl { float: left; }
+.fr { float: right; }
+.cl { clear: left; }
+.cr { clear: right; }
+  
+/*-->> Flex img/vid fixes <<--*/
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+.video embed,
+.video object,
+.video iframe {
+  width: 100%;
+  height: auto;
+}

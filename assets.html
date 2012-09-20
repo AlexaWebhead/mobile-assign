@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Assign1 | Alexa</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<link rel="stylesheet" href="css/assign1_theme.min.css" />
+	<link rel="stylesheet" href="css/main.css" />
+</head> 
+<body> 
+
+	<!-- Page 1 -->
+	<div data-role="page" id="assets" data-title="Image Assets | Alexa">
+		<header data-role="header">
+			<h1>Image Assets</h1>
+			<nav data-role="navbar">
+				<ul>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav><!-- /navbar -->
+		</header><!-- /header -->
+
+		<div data-role="content">	
+			<h2>Voila, the only image asset:</h2>	
+			<hr>
+			<a href="#" data-rel="back" data-role="button" data-icon="back">Back</a>
+			<img src="img/me.jpg" alt="pic of me!" class="padded"/>
+		</div><!-- /content -->
+
+		<footer data-role="footer">
+			<h4>This probably doesn't need a footer...</h4>
+		</footer><!-- /footer -->
+	</div><!-- /page 3 -->
+
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+	<script src="js/mobiledetect.js"></script>
+	<script type="text/javascript">
+		if (jQuery.browser.mobile == true) {
+			function hideAddressBar(){
+				if(document.documentElement.scrollHeight<window.outerHeight/window.devicePixelRatio){
+					document.documentElement.style.height=(window.outerHeight/window.devicePixelRatio)+"px";
+				}
+				setTimeout(window.scrollTo(1,1),0);
+			}
+			window.addEventListener("load",function(){
+				hideAddressBar();
+			});
+			window.addEventListener("orientationchange",hideAddressBar());
+		}
+	</script>
+</body>
+</html>
