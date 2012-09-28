@@ -24,8 +24,9 @@ div.ui-content h2 a.ui-link {
   text-decoration: none;
 }
 
-.ui-grid-a > div {
+.grid > div {
   padding: 20px;
+  float:left;
   @include box-sizing(border-box);
   &:first-child {
     padding-left: 0;
@@ -77,4 +78,27 @@ img {
 .video iframe {
   width: 100%;
   height: auto;
+}
+
+/*-->> Media queries <<--*/
+
+@media all and (min-width: 611px){
+  .grid > div {
+    $columns: 3;
+    width: 100%/$columns;
+  }
+}
+@media all and (max-width: 610px){
+  .grid > div {
+    $columns: 2;
+    width: 100%/$columns;
+  }
+}
+@media all and (max-width: 480px){
+  /* I changed this to landscape phone size because browsers don't size below 480 and I couldnt test it */
+  .grid > div {
+    width: 100%;
+    clear: both;
+    padding: 20px 0;
+  }
 }
