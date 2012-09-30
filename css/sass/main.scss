@@ -19,26 +19,32 @@ $pie-base-class: pie-element;
 
 /*-->> MAIN STYLING <<--*/
 
+a:hover, .ui-body-c .ui-link:hover {
+  color: $gray;
+}
+
 div.ui-content h2 a.ui-link {
   color: $red;
   text-decoration: none;
 }
 
-.grid > div {
-  padding: 20px;
-  float:left;
-  @include box-sizing(border-box);
-  &:first-child {
-    padding-left: 0;
-  }
-  &:last-child {
-    padding-right: 0;
-  }
-  h3 {
-    margin-top: -5px;
+.grid {
+  &> div {
+    padding: 20px;
+    float:left;
+    @include box-sizing(border-box);
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+    h3 {
+      margin-top: -5px;
+    }
   }
   img {
-    @include border-radius(10px);
+    @include border-radius(15px);
   }
 }
 
@@ -81,24 +87,38 @@ img {
 }
 
 /*-->> Media queries <<--*/
-
-@media all and (min-width: 611px){
+//desktop
+@media all and (min-width: 1020px){
   .grid > div {
     $columns: 3;
     width: 100%/$columns;
   }
 }
-@media all and (max-width: 610px){
+//tablet + landscape mobile
+@media all and (max-width: 1019px) and (min-width: 321px){
   .grid > div {
     $columns: 2;
     width: 100%/$columns;
+    clear: left;
+    &:last-child {
+      padding-right: 20px;
+    }
+  }
+  .grid .profileImg {
+    float: right;
   }
 }
-@media all and (max-width: 480px){
-  /* I changed this to landscape phone size because browsers don't size below 480 and I couldnt test it */
+//portrait mobile
+@media all and (max-width: 320px){
+  .contentTitle {
+    text-align: center;
+  }
   .grid > div {
     width: 100%;
     clear: both;
     padding: 20px 0;
+    &:last-child {
+      padding-right: 0px;
+    }
   }
 }
